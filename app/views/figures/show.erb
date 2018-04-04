@@ -1,0 +1,13 @@
+<h1><%=@figure.name%></h1>
+<h2>Landmarks associated with this NYC Historical Figure:</h2>
+  <ul>
+    <% @figure.landmarks.each do |l| %>
+      <li><a href="/landmarks/<%=l.id%>"><%=l.name%></a></li>
+    <% end %>
+  </ul>
+<h3>Titles held by this NYC Historical Figure:</h3>
+  <ul>
+    <% @figure.titles.each do |t| %>
+      <li><%=t.name%></li>
+    <% end %>
+  </ul>

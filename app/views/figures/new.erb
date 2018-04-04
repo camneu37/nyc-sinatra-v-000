@@ -1,0 +1,33 @@
+<h1>Create a new NYC Historical Figure</h1>
+<form action='/figures' method="post">
+  <h3><label for="figure_name">Figure Name:</label>
+    <input type="text" id="figure_name" name="figure[name]"></h3>
+
+    <br>
+
+  <h4>Select from existing landmarks:</h4>
+  <% @landmarks.each do |l| %>
+    <input type="checkbox" name="figure[landmark_ids][]" value="<%=l.id%>" id="landmark_<%=l.id%>"><%=l.name%></input>
+  <% end %>
+
+    <br>
+
+  <h4><label for="new_landmark">and/or create a new landmark:</label>
+    <input type="text" id="new_landmark" name="landmark[name]"></h4>
+
+    <br>
+
+  <h4>Select from existing titles:</h4>
+  <% @titles.each do |t| %>
+    <input type="checkbox" name="figure[title_ids][]" value="<%=t.id%>" id="title_<%=t.id%>"><%=t.name%></input>
+  <% end %>
+
+    <br>
+
+    <h4><label for="new_title">and/or create a new title:</label>
+      <input type="text" id="new_title" name="title[name]"></h4>
+
+      <br>
+
+  <input type="submit" value="Create New Figure">
+</form>

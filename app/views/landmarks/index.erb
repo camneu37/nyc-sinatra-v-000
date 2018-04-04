@@ -1,0 +1,13 @@
+<h1>NYC Historical Landmarks</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Year Completed</th>
+  </tr>
+  <% @landmarks.each do |l| %>
+  <tr>
+    <td><%= l.name %></td>
+    <td><%= l.year_completed %></td>
+  </tr>
+  <% end %>
+<table>
